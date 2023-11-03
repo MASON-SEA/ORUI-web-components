@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/components/index.js" type="module"></script>
+    <style>
+        :root{
+            --font-color: #678910
+        }
+    </style>
+</head>
+<body>
+    <p>test</p>
+    <orui-button
+        text="123456"
+        xxx=""
+        ui_name="456"
+    ></orui-button>
+    <script type="module">
+        // import { test_template } from "/components/template/test.js";
+        let input  = document.createElement('orui-input');
+        input.addEventListener('change_data',(e) => {
+            console.log(e);
+        });
+        input.addEventListener('change_data',(e) => {
+            console.log(2,e);
+        });
+        document.body.append(input);
+
+        const html = `
+            <orui-template-test>
+                <orui-button
+                    slot="title"
+                    :text="item.name"
+                    :xxx ="xx"
+                ></orui-button>
+                <p
+                    slot="xxxx"
+                >
+                    xxxxxxxxxxx
+                </p>
+            </orui-template-test>
+        `;
+
+        const template = document.createElement('fragment');
+        template.innerHTML = html;
+        document.body.append(template);
+    </script>
+</body>
+</html>
